@@ -1,0 +1,7 @@
+pod "radbear-ios", :path => "../radbear-ios.podspec"
+
+target "Demo" do
+end
+
+target "DemoTests" do
+end

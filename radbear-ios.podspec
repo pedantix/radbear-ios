@@ -1,20 +1,20 @@
+SUMMARY = "an iOS library to help build apps served by a restful api, such as Rails"
+
 Pod::Spec.new do |s|
   s.name             = "radbear-ios"
-  s.version          = "0.1.0"
-  s.summary          = "an iOS library to help build apps served by a Rails api"
-  s.description      = <<-DESC
-                       an iOS library to help build apps served by a Rails api
-                       DESC
+  s.version          = "0.0.1"
+  s.summary          = SUMMARY
+  s.description      = SUMMARY
   s.homepage         = "https://github.com/radicalbear/radbear-ios"
-  s.license          = 'MIT'
-  s.author           = { "Gary Foster" => "gary@radicalbear.com" }
-  s.source           = { :git => "https://github.com/radicalbear/radbear-ios.git", :tag => s.version.to_s }
+  s.license          = { :type => 'BSD' }
+  s.authors           = { "Gary Foster" => "gary@radicalbear.com", "Shaun Hubbard" => "shaunhubbard2013@icloud.com" }
+  s.source           = { :git => "https://github.com/radicalbear/radbear-ios.git", branch: "swh-lint-pod" }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'Classes'
-  s.resources = 'Assets/*'
+  s.source_files = 'Classes/*.{h,m}'
+  s.resources = ['Assets/*', 'Test']
   
   s.prefix_header_contents = "#import <SystemConfiguration/SystemConfiguration.h>\n#import <MobileCoreServices/MobileCoreServices.h>"
 
@@ -28,4 +28,5 @@ Pod::Spec.new do |s|
   s.dependency 'BButton',                    '3.2.3'
   s.dependency 'FontAwesomeKit/FontAwesome', '2.2.0'
   s.dependency 'NewRelicAgent',              '~> 5'
+  s.dependency 'CocoaHTTPServer', '~> 2.3'
 end

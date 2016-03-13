@@ -64,7 +64,6 @@ Here are some raw notes on how to set up a project. You can also check out our s
 
 * set up build on circle ci
   * add project to circle
-    * set experimental setting as ios app
     * it should fail at first
     * env vars
       * HOCKEYAPP_API_TOKEN = get from hockeyapp site

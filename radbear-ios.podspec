@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.resources = ['Assets/*', 'Test']
   
   s.prefix_header_contents = "#import <SystemConfiguration/SystemConfiguration.h>\n#import <MobileCoreServices/MobileCoreServices.h>"
+  s.libraries = 'NewRelicAgent'
 
   s.dependency 'SDWebImage'
   s.dependency 'RestKit',                    '~> 0.20.0'

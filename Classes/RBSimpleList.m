@@ -12,6 +12,7 @@
 #import "DejalActivityView.h"
 #import "RBSimpleViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FontAwesomeKit/FontAwesomeKit.h"
 
 @implementation RBSimpleList
 
@@ -138,7 +139,7 @@
             [cell.imageView setImage:avatar.image];
         }
         else {
-            [cell.imageView setImageWithURL:[NSURL URLWithString:avatar.small] placeholderImage:[UIImage imageNamed:@"document.png"]];
+            [cell.imageView setImageWithURL:[NSURL URLWithString:avatar.small] placeholderImage:[self placeHolderImage]];
             if( enableRoundedImages )
             {
                 cell.imageView.layer.masksToBounds = YES;
@@ -218,6 +219,12 @@
 
 - (void)activityEnd {
     [DejalBezelActivityView removeViewAnimated:YES];
+}
+
+- (UIImage *)placeHolderImage {
+    NSError *err = nil;
+    FAKIonIcons *personIcon = [FAKIonIcons iconWithIdentifier:@"ion-person" size:48 error:err];
+    return [personIcon imageWithSize:CGSizeMake(15, 15)];
 }
 
 @end
